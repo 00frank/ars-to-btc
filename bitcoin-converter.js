@@ -40,7 +40,6 @@ let actualizarDolar = () => {
         
         return c.json();
     }).then(dolar => {
-        console.log(dolar)
         USD_BLUE = parseFloat(dolar[1].casa.venta);
         console.log("1 USD BLUE EQUIVALE A: "+ USD_BLUE+ " ARS");
     })
