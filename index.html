@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>EcmaScript</title>
+</head>
+
+<body>
+
+    <form method="POST">
+        <label for="monto">Ingrese el monto en ARS a conocer de Bitcoins</label>
+        <input type="number" name="monto" id="monto" required>
+        <button type="submit" onclick="convertirBitcoin()">Conocer</button>
+
+        <label id="bitcoins"></label>
+    </form>
+
+    <script src="bitcoin-converter.js"></script>
+</body>
+
+</html>

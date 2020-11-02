@@ -1,0 +1,22 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+form {
+  padding: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form label#bitcoins {
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+small {
+    font-size: 12px;
+    color: rgb(48, 48, 48);
+}
