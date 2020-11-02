@@ -1,18 +1,14 @@
 //funcion fetch()
 //permite ejecutar servicios HTTP (consultar a una api)
-const USD_OFICIAL = 78.69;
-const USD_BLUE = 169;
+var USD_OFICIAL = 78;
+var USD_BLUE = 169;
+var form = document.querySelector("form").addEventListener('submit', preventDefault);
 
 var rep = 0;
 
 function convertirBitcoin() {
     var labelBitcoins = document.querySelector("label#bitcoins");
     var pesos = document.querySelector("input#monto").value;
-    var form = document.querySelector("form").addEventListener('submit', preventDefault);
-
-    function preventDefault(event) {
-        event.preventDefault();
-    }
 
     const path = "https://api.coindesk.com/v1/bpi/currentprice.json";
     fetch(path).then(c => {
@@ -35,3 +31,30 @@ function convertirBitcoin() {
     })
 
 }
+
+
+let actualizarDolar = () => {
+    const pathDOLAR= "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+
+    fetch(pathDOLAR).then(c =>{
+        
+        return c.json();
+    }).then(dolar => {
+        console.log(dolar)
+        USD_BLUE = parseFloat(dolar[1].casa.venta);
+        console.log("1 USD BLUE EQUIVALE A: "+ USD_BLUE+ " ARS");
+    })
+
+    fetch(pathDOLAR).then(c =>{
+        return c.json();
+    }).then(dolar => {
+        USD_OFICIAL = parseFloat(dolar[0].casa.venta);
+        console.log("1 USD OFICIAL EQUIVALE A: "+ USD_OFICIAL+ " ARS");
+    })
+}
+
+function preventDefault(event) {
+    event.preventDefault();
+}
+
+actualizarDolar();
