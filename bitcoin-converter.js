@@ -1,7 +1,7 @@
 //funcion fetch()
 //permite ejecutar servicios HTTP (consultar a una api)
-var USD_OFICIAL = 78;
-var USD_BLUE = 169;
+var date = new Date();
+var today = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
 var form = document.querySelector("form").addEventListener('submit', preventDefault);
 
 var rep = 0;
@@ -35,7 +35,7 @@ function convertirBitcoin() {
 
 let actualizarDolar = () => {
     const pathDOLAR= "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
-
+    console.log(`Precio al dia de la fecha: ${today}`);
     fetch(pathDOLAR).then(c =>{
         
         return c.json();
